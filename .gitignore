@@ -98,7 +98,11 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
+#taggers
+.tagger
 /site
 
 # mypy
 .mypy_cache/
+
+*.tagger
