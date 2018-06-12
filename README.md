@@ -10,16 +10,16 @@ procesar pliegos
 
 
 # Descargar modulos de nltk
-* tokenizer
-** $ python3
-** >>> import nltk
-** >>> nltk.download('punkt')
-* wordnet
-** >>> import nltk
-** >>> nltk.download('wordnet')
-** >>> nltk.download('omw')
-** >>> from nltk.corpus import wordnet as wn
-** >>> wn.synsets('bank')[0].lemma_names('spa')
+## tokenizer
+* $ python3
+* >>> import nltk
+* >>> nltk.download('punkt')
+## wordnet
+* >>> import nltk
+* >>> nltk.download('wordnet')
+* >>> nltk.download('omw')
+* >>> from nltk.corpus import wordnet as wn
+* >>> wn.synsets('bank')[0].lemma_names('spa')
 
 Descargar corpus de wordnet en español.
 https://stackoverflow.com/questions/26474731/missing-spanish-wordnet-from-nltk 
