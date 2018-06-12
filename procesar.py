@@ -3,14 +3,16 @@ from nltk import sent_tokenize
 import io
 from PyPDF2 import PdfFileReader
 
-with open("pliego-ejemplo-01.pdf",'rb') as f:
+with open("pliego-ejemplo02.pdf",'rb') as f:
     if f:
         ipdf = PdfFileReader(f)
+        print("DocumentInformation : "+str(ipdf.documentInfo.producer))
         print("Number of pages:-"+str(ipdf.numPages))
         for page in ipdf.pages: 
-#           print(page.extractText().encode('utf-8'));
+           print(page.extractText().encode('utf-8'));
             #print(page.extractText().encode('ascii', 'ignore'))
-            print("nueva pagina")
+            #
+#            print("nueva pagina")
 #        textpdf = [ for p in ipdf.pages]
 #        mifile = io.open("test.txt", 'w', encoding='utf8') #open("test.txt","w")
 #        for item in textpdf:
