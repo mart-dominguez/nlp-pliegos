@@ -29,3 +29,6 @@ https://stackoverflow.com/questions/26474731/missing-spanish-wordnet-from-nltk
 
 Unigram y bigram
 https://stackoverflow.com/questions/14732465/nltk-tagging-spanish-words-using-a-corpus
+
+
+Analisis https://pmoracho.github.io/blog/2017/01/04/NLTK-mi-tutorial/ 
