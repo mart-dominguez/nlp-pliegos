@@ -77,6 +77,6 @@ def predict_pos_tags(sentence):
     tags = rf.predict(features)
     return zip(sentence, tags)
 
-test_sentence = "Mi perro puede volar muy alto"
+test_sentence = "Quiero comprar 3 docenas de empanadas y 4 litros de nafta"
 for tagged in predict_pos_tags(test_sentence.split()):
     print(tagged)    
