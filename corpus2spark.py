@@ -55,36 +55,21 @@ def ext_ft(tg_sent):
 # Read the corpus into a list, 
 # each entry in the list is one sentence.
 cess_sents = cess.tagged_sents()
-print("CESSS  =================================")
-print(cess_sents[:100])
+
+corpus_file = open("corpus01.txt","w")
+for word in cess_sents:
+    print(word,file=corpus_file)
 
 # Train the unigram tagger
 uni_tag = ut(cess_sents)
-print("UNI TAG  =================================")
-print(uni_tag)
 
 X,y = ext_ft(cess_sents)
-print(" X , y  =================================")
-print(X[:20])
-print(" X , y  =================================")
-print(y[:20])
-n_sample = 20000
-dict_vectorizer = DictVectorizer(sparse=False)
-X_transformed = dict_vectorizer.fit_transform(X[0:n_sample])
-y_sampled = y[0:n_sample]
 
-X_train,X_test,y_train,y_test = train_test_split(X_transformed, y_sampled, test_size=0.2, random_state=123)
+corpus_X_file = open("corpus_X.txt","w")
+for word in X:
+    print(word,file=corpus_X_file)
 
-rf = RandomForestClassifier(n_jobs=4)
-rf.fit(X_train,y_train)
 
-def predict_pos_tags(sentence):
-    tagged_sentence = []
-    features = [sentence_features(sentence, index) for index in range(len(sentence))]
-    features = dict_vectorizer.transform(features)
-    tags = rf.predict(features)
-    return zip(sentence, tags)
-
-test_sentence = "Quiero promocionar alumnos pero mi escuela falla"
-for tagged in predict_pos_tags(test_sentence.split()):
-    print(tagged)    
+corpus_y_file = open("corpus_y.txt","w")
+for word in y:
+    print(word,file=corpus_y_file)
